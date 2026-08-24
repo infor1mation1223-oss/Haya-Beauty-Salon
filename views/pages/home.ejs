@@ -1,0 +1,250 @@
+<section class="hero" aria-label="Haya Beauty Salon">
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <p class="hero-watermark" aria-hidden="true">HAYA</p>
+    <p class="hero-kicker">Baldia Town · Karachi</p>
+    <h1>Where Beauty <em>Meets Confidence</em></h1>
+    <p class="hero-lead">
+      Haya Beauty Salon is a welcoming beauty destination in Baldia Town, Karachi —
+      a calm room for considered hair, makeup, and personal care.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="/booking">Book an Appointment</a>
+      <a class="btn btn-ghost" href="/services">Explore Services</a>
+      <div class="hero-phone">
+        <span>Call the salon</span>
+        <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-photo">
+      <img
+        src="/images/hero-salon.jpg"
+        alt="Ivory salon interior with gold mirrors, champagne chairs, and burgundy drapes"
+        width="1376"
+        height="768"
+      >
+    </div>
+    <div class="hero-frame">
+      <img
+        src="/images/hero-portrait.jpg"
+        alt="Editorial beauty portrait with soft glam makeup and polished waves"
+        width="720"
+        height="900"
+      >
+    </div>
+    <div class="hero-badge">
+      <strong><%= site.rating %></strong>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <span>Based on <%= site.reviewCount %> reviews</span>
+    </div>
+    <p class="hero-vert">Karachi · Baldia Town</p>
+  </div>
+</section>
+
+<section class="trust" aria-label="Salon at a glance">
+  <div class="container-wide">
+    <div class="trust-row">
+      <div class="trust-item">
+        <b><%= site.rating %> / 5</b>
+        <span>Guest rating</span>
+      </div>
+      <div class="trust-item">
+        <b><%= site.reviewCount %> reviews</b>
+        <span>Customer feedback</span>
+      </div>
+      <div class="trust-item">
+        <b>Karachi</b>
+        <span>Baldia Town</span>
+      </div>
+      <div class="trust-item">
+        <b>By appointment</b>
+        <span>Booking available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <% for (let i = 0; i < 2; i++) { %>
+      <span>Hair Styling <b>·</b></span>
+      <span>Hair Care <b>·</b></span>
+      <span>Makeup <b>·</b></span>
+      <span>Facial &amp; Skin <b>·</b></span>
+      <span>Bridal Beauty <b>·</b></span>
+      <span>Manicure &amp; Pedicure <b>·</b></span>
+    <% } %>
+  </div>
+</div>
+
+<section class="section section-ivory" id="story">
+  <div class="container split">
+    <div class="image-stack reveal reveal-image">
+      <span class="gold-box" aria-hidden="true"></span>
+      <img class="main-shot" src="/images/about-salon.jpg" alt="Boutique salon reception with marble desk and blush roses" width="1200" height="900">
+      <img class="offset-shot" src="/images/about-detail.jpg" alt="Gold brushes, compact, and a blush rose on marble" width="800" height="1000">
+    </div>
+    <div class="split-copy">
+      <p class="section-kicker reveal">01 · The salon</p>
+      <h2 class="section-title reveal">A quieter kind of <em>beauty visit</em></h2>
+      <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="section-lead reveal">
+        Haya Beauty Salon sits in New Saeedabad, Baldia Town — a local salon built around
+        ease, care, and the simple pleasure of being looked after.
+      </p>
+      <p class="section-lead reveal">
+        Come for a finished look, stay for the pace. We keep the experience personal,
+        the room elegant, and the conversation honest.
+      </p>
+      <p style="margin-top:28px" class="reveal">
+        <a class="btn btn-line" href="/about">Discover Our Story</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream" id="services-preview">
+  <div class="container">
+    <div class="section-head center">
+      <p class="section-kicker reveal">02 · The menu</p>
+      <h2 class="section-title reveal">Services, shaped <em>around you</em></h2>
+      <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="section-lead reveal">
+        These categories are a starting point the salon can tailor. Ask what’s available
+        for your visit — names and details are easy to update.
+      </p>
+    </div>
+    <div class="card-grid" style="margin-top:48px">
+      <% site.services.slice(0, 6).forEach((svc, i) => { %>
+        <article class="service-card reveal" style="--d: <%= i * 70 %>ms">
+          <div class="service-media">
+            <img src="<%= svc.image %>" alt="<%= svc.alt %>" width="800" height="640" loading="lazy">
+            <span class="service-index">0<%= i + 1 %></span>
+          </div>
+          <div class="service-body">
+            <p class="service-cat"><%= svc.category %></p>
+            <h3><%= svc.title %></h3>
+            <p><%= svc.summary %></p>
+            <div class="service-meta">
+              <span><%= svc.price %></span>
+              <a class="btn-line" href="/booking?service=<%= svc.id %>">Book</a>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+    <p style="text-align:center;margin-top:36px" class="reveal">
+      <a class="btn btn-burgundy btn" href="/services" style="background:var(--burgundy);color:var(--ivory)">View all services</a>
+    </p>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-head center">
+      <p class="section-kicker reveal">03 · Why Haya</p>
+      <h2 class="section-title reveal">What a visit <em>feels like</em></h2>
+      <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="benefit-grid" style="margin-top:48px">
+      <% site.benefits.forEach((b, i) => { %>
+        <article class="benefit reveal" style="--d: <%= i * 80 %>ms">
+          <div class="benefit-num">0<%= i + 1 %></div>
+          <h3><%= b.title %></h3>
+          <p><%= b.text %></p>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;max-width:none">
+      <div>
+        <p class="section-kicker reveal">04 · Atmosphere</p>
+        <h2 class="section-title reveal">Gallery</h2>
+      </div>
+      <a class="btn btn-line reveal" href="/gallery">Open the gallery</a>
+    </div>
+    <div class="masonry" style="margin-top:36px" data-gallery="preview">
+      <% site.gallery.slice(0, 8).forEach((img, i) => { %>
+        <figure class="masonry-item reveal" data-index="<%= i %>" tabindex="0" role="button" aria-label="Open image: <%= img.alt %>">
+          <img src="<%= img.src %>" alt="<%= img.alt %>" loading="lazy" width="800" height="1000">
+          <figcaption><%= img.category %></figcaption>
+        </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container" style="text-align:center">
+    <p class="section-kicker reveal">05 · Guests</p>
+    <div class="rating-hero reveal">
+      <p class="rating-number"><%= site.rating %></p>
+      <div class="stars" aria-label="<%= site.rating %> out of 5 stars">★★★★★</div>
+      <p>Based on <%= site.reviewCount %> reviews</p>
+    </div>
+    <p class="section-lead reveal" style="margin-inline:auto">
+      A genuine <%= site.rating %> rating from <%= site.reviewCount %> guests.
+      Individual written stories can be added here when the salon shares them.
+    </p>
+    <p style="margin-top:24px" class="reveal">
+      <a class="btn btn-line" href="/reviews">Read the rating</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;padding-bottom:0">
+  <div class="container-wide">
+    <div class="yt-panel reveal">
+      <div class="yt-copy">
+        <p class="section-kicker" style="color:var(--gold-light)">On film</p>
+        <h2>Discover the salon on YouTube</h2>
+        <p>
+          Follow Haya Beauty Salon for beauty content from the team.
+          The channel is the salon’s official video home.
+        </p>
+        <a class="btn btn-gold" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer">
+          Visit Our YouTube Channel
+        </a>
+      </div>
+      <a class="yt-visual" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer" aria-label="Open Haya Beauty Salon on YouTube">
+        <img src="/images/youtube-cover.jpg" alt="Salon interior inviting viewers to the YouTube channel" loading="lazy" width="1200" height="800">
+        <div class="play-badge"><span aria-hidden="true">▶</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container split">
+    <div>
+      <p class="section-kicker reveal">06 · Find us</p>
+      <h2 class="section-title reveal">Baldia Town, <em>Karachi</em></h2>
+      <p class="section-lead reveal"><%= site.address.full %></p>
+      <p class="section-lead reveal">Phone <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a></p>
+      <p class="note reveal"><%= site.hoursNote %></p>
+      <div class="hero-actions reveal" style="margin-top:28px">
+        <a class="btn btn-gold" href="/booking">Book Your Visit</a>
+        <a class="btn btn-ghost" href="<%= site.mapDirections %>" target="_blank" rel="noopener noreferrer">Get Directions</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        title="Map showing Haya Beauty Salon in Baldia Town, Karachi"
+        src="<%= site.mapEmbed %>"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/cta") %>

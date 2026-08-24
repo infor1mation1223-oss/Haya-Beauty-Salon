@@ -1,0 +1,63 @@
+<header class="page-hero">
+  <div class="container">
+    <p class="section-kicker">Guests</p>
+    <h1>Reviews</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · Reviews</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container" style="text-align:center">
+    <div class="rating-hero">
+      <p class="section-kicker">Aggregate rating</p>
+      <p class="rating-number"><%= site.rating %></p>
+      <div class="stars" aria-label="<%= site.rating %> out of 5 stars">★★★★★</div>
+      <p>Based on <%= site.reviewCount %> Reviews</p>
+    </div>
+    <p class="section-lead" style="margin: 20px auto 0; max-width: 52ch">
+      Haya Beauty Salon holds a <%= site.rating %> out of 5 rating from <%= site.reviewCount %> customer reviews.
+      We show only this verified total — individual names and quotations are not invented here.
+    </p>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head center">
+      <h2 class="section-title">Written stories, <em>when you have them</em></h2>
+      <p class="section-lead">
+        Customer reviews can be added here. Until real written feedback is supplied,
+        these cards stay as elegant placeholders so the salon can paste genuine notes later.
+      </p>
+    </div>
+
+    <div class="review-empty">
+      <% for (let i = 1; i <= 3; i++) { %>
+        <article class="empty-card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <h3>Guest note <%= i %></h3>
+          <p>Customer reviews can be added here. Replace this placeholder with a real name, date, and the guest’s own words.</p>
+        </article>
+      <% } %>
+    </div>
+
+    <% if (site.writtenReviews.length) { %>
+      <div class="review-empty" style="margin-top:22px">
+        <% site.writtenReviews.forEach((r) => { %>
+          <article class="empty-card">
+            <div class="stars"><%= "★".repeat(r.rating || 5) %></div>
+            <h3><%= r.name %></h3>
+            <p><%= r.text %></p>
+          </article>
+        <% }) %>
+      </div>
+    <% } %>
+
+    <p class="note" style="text-align:center;margin-top:28px">
+      To publish a real review, add an object to <code>writtenReviews</code> in <code>config/site.js</code>.
+    </p>
+  </div>
+</section>
+
+<%- include("../partials/cta") %>

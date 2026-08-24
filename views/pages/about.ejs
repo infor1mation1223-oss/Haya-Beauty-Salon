@@ -1,0 +1,114 @@
+<header class="page-hero">
+  <div class="container">
+    <img class="brand-mark" src="/images/logo-mark.png" width="56" height="56" alt="">
+    <p class="section-kicker">The salon</p>
+    <h1>About Haya</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · About</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container split">
+    <div class="image-stack reveal reveal-image">
+      <span class="gold-box" aria-hidden="true"></span>
+      <img class="main-shot" src="/images/about-salon.jpg" alt="Reception of a boutique salon with marble and roses" width="1200" height="900">
+      <img class="offset-shot" src="/images/hero-portrait.jpg" alt="Soft glam beauty portrait" width="720" height="900">
+    </div>
+    <div>
+      <p class="section-kicker reveal">Introduction</p>
+      <h2 class="section-title reveal">A local salon with a <em>quiet luxury</em> pace</h2>
+      <p class="section-lead reveal">
+        Haya Beauty Salon is a beauty salon in House # 426, Sector 9/E1, New Saeedabad,
+        Baldia Town, Karachi. Guests come for a finished look — and for a room that feels
+        considered rather than hurried.
+      </p>
+      <p class="section-lead reveal">
+        We do not dress the story up with invented years or awards. What we can promise
+        is a customer-first visit: you are greeted properly, heard clearly, and treated
+        with care.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory" style="padding-top:0">
+  <div class="container split">
+    <blockquote class="pull-quote reveal">
+      Looking after yourself should feel calm, personal, and considered.
+      <cite>Haya Beauty Salon · Baldia Town</cite>
+    </blockquote>
+    <p class="section-lead reveal">
+      That is the whole brief. No invented heritage, no crowded promises — just a
+      neighbourhood salon that takes the visit seriously.
+    </p>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head center">
+      <p class="section-kicker reveal">Philosophy</p>
+      <h2 class="section-title reveal">How we think about <em>beauty</em></h2>
+    </div>
+    <div class="about-philosophy" style="margin-top:48px">
+      <article class="philo reveal">
+        <h3>Brand philosophy</h3>
+        <p>Beauty should feel like yourself, only more rested. We favour refinement over excess, and advice over pressure.</p>
+      </article>
+      <article class="philo reveal" style="--d:80ms">
+        <h3>The experience</h3>
+        <p>From the chair to the mirror, the visit is paced so you can sit still. Music low, light warm, conversation only as much as you want.</p>
+      </article>
+      <article class="philo reveal" style="--d:160ms">
+        <h3>Customer first</h3>
+        <p>Appointments, questions, and follow-ups are handled with the same courtesy as the service. If something needs adjusting, we listen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivory">
+  <div class="container split reverse">
+    <div class="split-copy">
+      <p class="section-kicker reveal">The room</p>
+      <h2 class="section-title reveal">An elegant, <em>relaxing</em> environment</h2>
+      <p class="section-lead reveal">
+        Ivory walls, gold light, and a calmer tempo. The salon is designed to feel like
+        a boutique sitting room rather than a crowded floor.
+      </p>
+      <p class="section-lead reveal">
+        Whether you are here for a quick finish or a longer sitting, the space is kept
+        clean, warm, and uncluttered.
+      </p>
+    </div>
+    <img class="reveal reveal-image" src="/images/hero-salon.jpg" alt="Styling hall with gold mirrors and champagne chairs" width="1376" height="768" style="width:100%;height:100%;object-fit:cover;min-height:420px">
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container split">
+    <div>
+      <p class="section-kicker reveal">Location</p>
+      <h2 class="section-title reveal">Find us in <em>Baldia Town</em></h2>
+      <p class="section-lead reveal"><%= site.address.full %></p>
+      <p class="section-lead reveal">Telephone: <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a></p>
+      <p class="note reveal"><%= site.hoursNote %></p>
+      <div class="hero-actions reveal" style="margin-top:24px">
+        <a class="btn btn-gold" href="/booking">Book an Appointment</a>
+        <a class="btn btn-ghost" href="<%= site.mapDirections %>" target="_blank" rel="noopener noreferrer">Get Directions</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        title="Map of Haya Beauty Salon"
+        src="<%= site.mapEmbed %>"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/cta") %>

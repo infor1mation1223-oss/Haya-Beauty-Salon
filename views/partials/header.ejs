@@ -1,0 +1,51 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Haya Beauty Salon home">
+      <img class="brand-mark" src="/images/logo-mark.png" width="44" height="44" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Haya</span>
+        <span class="brand-sub">Beauty Salon</span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <% site.nav.forEach((item) => { %>
+        <a
+          href="<%= item.href %>"
+          <%= page === item.page ? 'aria-current="page"' : "" %>
+        ><%= item.label %></a>
+      <% }) %>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="<%= site.telHref %>"><%= site.phoneDisplay %></a>
+      <a class="btn btn-gold" href="/booking">Book Appointment</a>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-panel"
+        aria-label="Open menu"
+      >
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <% site.nav.forEach((item, i) => { %>
+      <a class="m-link" href="<%= item.href %>">
+        <b>0<%= i + 1 %></b>
+        <%= item.label %>
+      </a>
+    <% }) %>
+    <a class="m-link" href="/booking"><b>07</b> Booking</a>
+  </nav>
+  <div class="panel-cta">
+    <a class="btn btn-gold" href="/booking">Book Appointment</a>
+    <a class="btn btn-ghost" href="<%= site.telHref %>">Call <%= site.phoneDisplay %></a>
+  </div>
+</div>

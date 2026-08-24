@@ -1,0 +1,108 @@
+<header class="page-hero">
+  <div class="container">
+    <p class="section-kicker">Visit</p>
+    <h1>Contact</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · Contact</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container contact-layout">
+    <div>
+      <p class="section-kicker">Write to us</p>
+      <h2 class="section-title">We would like to <em>hear from you</em></h2>
+      <p class="section-lead">Send a note, or call if you would rather speak. Messages are received by the salon and answered as soon as someone is free.</p>
+
+      <form class="contact-form" id="contact-form" action="/api/contact" method="post" novalidate style="margin-top:28px">
+        <div class="hp" aria-hidden="true">
+          <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="c-name">Full name</label>
+            <input id="c-name" name="name" autocomplete="name" required>
+            <span class="error" data-error="name"></span>
+          </div>
+          <div class="field">
+            <label for="c-phone">Phone</label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0344 2782872">
+            <span class="error" data-error="phone"></span>
+          </div>
+          <div class="field">
+            <label for="c-email">Email <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+            <input id="c-email" name="email" type="email" autocomplete="email">
+            <span class="error" data-error="email"></span>
+          </div>
+          <div class="field">
+            <label for="c-subject">Subject</label>
+            <input id="c-subject" name="subject" placeholder="Appointment, directions, services…">
+          </div>
+          <div class="field full">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" required></textarea>
+            <span class="error" data-error="message"></span>
+          </div>
+        </div>
+        <p style="margin-top:18px">
+          <button class="btn btn-gold" type="submit">Send Message</button>
+        </p>
+        <p class="form-status" role="status" aria-live="polite" style="margin-top:12px;color:var(--taupe)"></p>
+      </form>
+
+      <div class="form-success" id="contact-success">
+        <p class="section-kicker">Received</p>
+        <h3>Thank you</h3>
+        <p>Your message has been received. The salon will respond if a reply is needed.</p>
+      </div>
+    </div>
+
+    <aside>
+      <article class="info-card">
+        <h3>Haya Beauty Salon</h3>
+        <p>Phone: <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a></p>
+        <p style="margin-top:10px"><%= site.address.full %></p>
+        <div class="hero-actions" style="margin-top:18px">
+          <a class="btn btn-gold" href="<%= site.telHref %>">Call <%= site.phoneDisplay %></a>
+        </div>
+        <p style="margin-top:12px">
+          <a class="btn-line" href="<%= site.whatsappHref %>" target="_blank" rel="noopener noreferrer">WhatsApp the salon</a>
+        </p>
+        <p style="margin-top:12px">
+          <a class="btn-line" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer">Visit Our YouTube Channel</a>
+        </p>
+      </article>
+
+      <article class="info-card" style="margin-top:16px">
+        <h3>Opening hours</h3>
+        <p class="note" style="margin-top:0"><%= site.hoursNote %></p>
+        <ul class="hours-list">
+          <% site.hoursEditable.forEach((row) => { %>
+            <li><strong><%= row.day %></strong><span><%= row.hours %></span></li>
+          <% }) %>
+        </ul>
+      </article>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:22px">
+      <h2 class="section-title">Map</h2>
+      <p class="section-lead">House # 426, Sector 9/E1, New Saeedabad, Baldia Town Karachi.</p>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        title="Google map for Haya Beauty Salon"
+        src="<%= site.mapEmbed %>"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <p style="margin-top:18px">
+      <a class="btn btn-ghost" href="<%= site.mapDirections %>" target="_blank" rel="noopener noreferrer">Get Directions</a>
+    </p>
+  </div>
+</section>

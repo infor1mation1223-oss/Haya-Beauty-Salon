@@ -1,0 +1,41 @@
+<header class="page-hero">
+  <div class="container">
+    <p class="section-kicker">Atmosphere</p>
+    <h1>Gallery</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · Gallery</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container">
+    <p class="section-lead" style="margin-inline:auto;text-align:center">
+      A visual look at the salon’s mood — hair, makeup, interiors, and beauty details.
+      Replace any photograph in <code>public/images/gallery</code> and update captions in <code>config/site.js</code>.
+    </p>
+
+    <div class="filter-bar" style="justify-content:center" aria-label="Filter gallery">
+      <% site.galleryFilters.forEach((f, i) => { %>
+        <button class="filter-btn <%= i === 0 ? "is-active" : "" %>" type="button" data-gallery-filter="<%= f %>"><%= f %></button>
+      <% }) %>
+    </div>
+
+    <div class="masonry" data-gallery="page">
+      <% site.gallery.forEach((img, i) => { %>
+        <figure
+          class="masonry-item"
+          data-category="<%= img.category %>"
+          data-index="<%= i %>"
+          tabindex="0"
+          role="button"
+          aria-label="Open image: <%= img.alt %>"
+        >
+          <img src="<%= img.src %>" alt="<%= img.alt %>" loading="<%= i > 3 ? "lazy" : "eager" %>" width="900" height="1100">
+          <figcaption><%= img.category %></figcaption>
+        </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+

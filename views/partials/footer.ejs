@@ -1,0 +1,55 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img class="brand-mark" src="/images/logo-mark.png" width="44" height="44" alt="">
+          <span class="brand-text">
+            <span class="brand-name">Haya</span>
+            <span class="brand-sub">Beauty Salon</span>
+          </span>
+        </div>
+        <p>A welcoming beauty salon in Baldia Town, Karachi — calm, considered, and made around you.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <% site.nav.forEach((item) => { %>
+            <li><a href="<%= item.href %>"><%= item.label %></a></li>
+          <% }) %>
+          <li><a href="/booking">Booking</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="<%= site.telHref %>"><%= site.phoneDisplay %></a></li>
+          <li><a href="<%= site.whatsappHref %>" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><%= site.address.line1 %></li>
+          <li><%= site.address.short %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Visit</h3>
+        <ul class="footer-links">
+          <li><%= site.address.full %></li>
+          <li><a href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+          <li><a href="/reviews"><%= site.rating %> / 5 · <%= site.reviewCount %> reviews</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-cta">
+      <p>Ready to feel your best? Book your appointment today.</p>
+      <a class="btn btn-gold" href="/booking">Book Appointment</a>
+    </div>
+
+    <div class="legal">
+      <span>© <%= year %> Haya Beauty Salon. All rights reserved.</span>
+      <span>Baldia Town, Karachi, Pakistan</span>
+    </div>
+  </div>
+</footer>

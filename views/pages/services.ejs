@@ -1,0 +1,64 @@
+<header class="page-hero">
+  <div class="container">
+    <p class="section-kicker">The menu</p>
+    <h1>Services</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · Services</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-head center" style="max-width:680px">
+      <h2 class="section-title">A catalogue you can <em>edit</em></h2>
+      <p class="section-lead">
+        Exact treatments and prices were not published for this site. The categories below
+        are a professional starting menu — replace titles, copy, and photographs in
+        <code>config/site.js</code> to match what the salon actually offers.
+      </p>
+    </div>
+
+    <div class="filter-bar" role="tablist" aria-label="Filter services" style="justify-content:center">
+      <% site.serviceFilters.forEach((f, i) => { %>
+        <button class="filter-btn <%= i === 0 ? "is-active" : "" %>" type="button" data-filter="<%= f %>"><%= f %></button>
+      <% }) %>
+    </div>
+
+    <div class="card-grid" id="service-grid">
+      <% site.services.forEach((svc, i) => { %>
+        <article class="service-card" data-category="<%= svc.category %>">
+          <div class="service-media">
+            <img src="<%= svc.image %>" alt="<%= svc.alt %>" width="800" height="640" loading="<%= i > 2 ? "lazy" : "eager" %>">
+            <span class="service-index">0<%= i + 1 %></span>
+          </div>
+          <div class="service-body">
+            <p class="service-cat"><%= svc.category %></p>
+            <h3><%= svc.title %></h3>
+            <p><%= svc.description %></p>
+            <div class="service-meta">
+              <span><%= svc.price %></span>
+              <span><%= svc.duration %></span>
+            </div>
+            <a class="btn btn-gold" href="/booking?service=<%= svc.id %>" style="margin-top:8px">Book Now</a>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include("../partials/cta") %>
+
+<script>
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      const key = btn.dataset.filter;
+      document.querySelectorAll("#service-grid .service-card").forEach((card) => {
+        const show = key === "All" || card.dataset.category === key;
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
+</script>

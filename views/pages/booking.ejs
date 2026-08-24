@@ -1,0 +1,96 @@
+<header class="page-hero">
+  <div class="container">
+    <p class="section-kicker">Appointments</p>
+    <h1>Book a visit</h1>
+    <div class="gold-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+    <p class="crumbs"><a href="/">Home</a> · Booking</p>
+  </div>
+</header>
+
+<section class="section section-ivory">
+  <div class="container booking-layout">
+    <div>
+      <p class="section-kicker">Request</p>
+      <h2 class="section-title">Tell us when you’d like to <em>come in</em></h2>
+      <p class="section-lead">
+        Send a request and the salon will confirm. This form does not lock a chair automatically —
+        someone from Haya will be in touch.
+      </p>
+      <ul class="hours-list reveal" style="margin: 18px 0 8px; max-width: 460px">
+        <li><strong>01</strong><span>Share your name, number, and preferred time</span></li>
+        <li><strong>02</strong><span>The salon reviews the request</span></li>
+        <li><strong>03</strong><span>You receive a confirmation by call or WhatsApp</span></li>
+      </ul>
+
+      <form class="booking-form" id="booking-form" action="/api/booking" method="post" novalidate style="margin-top:28px">
+        <div class="hp" aria-hidden="true">
+          <label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="b-name">Full name</label>
+            <input id="b-name" name="name" autocomplete="name" required>
+            <span class="error" data-error="name"></span>
+          </div>
+          <div class="field">
+            <label for="b-phone">Phone number</label>
+            <input id="b-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="03442782872" required>
+            <span class="error" data-error="phone"></span>
+          </div>
+          <div class="field">
+            <label for="b-date">Preferred date</label>
+            <input id="b-date" name="date" type="date" required>
+            <span class="error" data-error="date"></span>
+          </div>
+          <div class="field">
+            <label for="b-time">Preferred time</label>
+            <input id="b-time" name="time" type="time" required>
+            <span class="error" data-error="time"></span>
+          </div>
+          <div class="field full">
+            <label for="b-service">Service</label>
+            <select id="b-service" name="service" required>
+              <option value="">Choose a category</option>
+              <% site.services.forEach((svc) => { %>
+                <option value="<%= svc.id %>"><%= svc.title %></option>
+              <% }) %>
+              <option value="other">Something else / I’ll explain</option>
+            </select>
+            <span class="error" data-error="service"></span>
+          </div>
+          <div class="field full">
+            <label for="b-message">Message / special request</label>
+            <textarea id="b-message" name="message" placeholder="Occasion, preferences, or anything we should know."></textarea>
+          </div>
+        </div>
+        <p style="margin-top:18px">
+          <button class="btn btn-gold" type="submit">Request Appointment</button>
+        </p>
+        <p class="form-status" role="status" aria-live="polite" style="margin-top:12px;color:var(--taupe)"></p>
+      </form>
+
+      <div class="form-success" id="booking-success">
+        <p class="section-kicker">Request received</p>
+        <h3>Thank you</h3>
+        <p id="booking-success-text">
+          Your appointment request has been received. The salon will confirm the time with you.
+          This is a request, not an automatic confirmation.
+        </p>
+        <p style="margin-top:20px">
+          <a class="btn btn-gold" href="<%= site.telHref %>">Call <%= site.phoneDisplay %></a>
+        </p>
+      </div>
+    </div>
+
+    <aside class="side-card">
+      <h3>Prefer to talk?</h3>
+      <p>The fastest way to lock a time is still a phone call or a WhatsApp note.</p>
+      <div class="stack">
+        <a class="btn btn-gold" href="<%= site.telHref %>">Call <%= site.phoneDisplay %></a>
+        <a class="btn btn-ivory" href="<%= site.whatsappHref %>" target="_blank" rel="noopener noreferrer">WhatsApp the salon</a>
+      </div>
+      <p style="margin-top:28px"><%= site.address.full %></p>
+      <p class="note" style="color:var(--gold-light)"><%= site.hoursNote %></p>
+    </aside>
+  </div>
+</section>

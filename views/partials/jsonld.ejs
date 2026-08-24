@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": site.schemaType,
+  "name": site.name,
+  "image": ogImage,
+  "telephone": site.phone,
+  "url": canonical.replace(/\/(about|services|gallery|reviews|contact|booking)\/?$/, "/"),
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": String(site.rating),
+    "reviewCount": String(site.reviewCount),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "House # 426, Sector 9/E1, New Saeedabad",
+    "addressLocality": "Baldia Town",
+    "addressRegion": "Karachi",
+    "postalCode": site.address.postal,
+    "addressCountry": "PK"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Karachi"
+  },
+  "sameAs": [site.youtube]
+}) %>
+</script>

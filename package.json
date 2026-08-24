@@ -1,0 +1,18 @@
+{
+  "name": "haya-beauty-salon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Haya Beauty Salon — premium multi-page website for a local beauty salon in Baldia Town, Karachi.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
