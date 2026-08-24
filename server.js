@@ -8,7 +8,9 @@ const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 const ROOT = __dirname;
 const VIEWS = path.join(ROOT, "views");
-const DATA_DIR = path.join(ROOT, "data");
+const DATA_DIR = process.env.VERCEL
+  ? path.join("/tmp", "haya-data")
+  : path.join(ROOT, "data");
 const BOOKINGS_FILE = path.join(DATA_DIR, "bookings.json");
 const MESSAGES_FILE = path.join(DATA_DIR, "messages.json");
 
@@ -346,6 +348,10 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Haya Beauty Salon running on http://0.0.0.0:${PORT}`);
-});
+module.exports = app;
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Haya Beauty Salon running on http://0.0.0.0:${PORT}`);
+  });
+}

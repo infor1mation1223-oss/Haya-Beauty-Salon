@@ -15,6 +15,24 @@ Open `http://localhost:3000`.
 
 Optional environment variables are listed in `.env.example`.
 
+## Deploy on Vercel
+
+This project is ready to import from GitHub. No frontend build step.
+
+1. Push the repo to GitHub.
+2. In Vercel: **Add New Project** → import this repository.
+3. Framework Preset: **Other**.
+4. Build Command: leave empty.
+5. Output Directory: leave empty.
+6. Install Command: `npm install`.
+7. Deploy.
+
+`vercel.json` sends every request to the Express app in `api/index.js`. Templates and images are bundled with the function.
+
+After deploy, set `SITE_URL` to your live domain (example: `https://haya-beauty-salon.vercel.app`) so canonical tags and the sitemap use the correct host.
+
+Booking files cannot persist on Vercel’s filesystem. Set `BOOKING_WEBHOOK_URL` / `CONTACT_WEBHOOK_URL` if you want requests forwarded to email, WhatsApp, or a database. Guests can always call or WhatsApp **0344 2782872**.
+
 ---
 
 ## 1. Tech stack

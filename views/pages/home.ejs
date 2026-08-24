@@ -1,69 +1,67 @@
 <section class="hero" aria-label="Haya Beauty Salon">
-  <div class="orb orb-a" aria-hidden="true"></div>
-  <div class="orb orb-b" aria-hidden="true"></div>
-  <div class="hero-copy">
-    <p class="hero-watermark" aria-hidden="true">HAYA</p>
-    <p class="hero-kicker">Baldia Town · Karachi</p>
-    <h1>Where Beauty <em>Meets Confidence</em></h1>
-    <p class="hero-lead">
-      Haya Beauty Salon is a welcoming beauty destination in Baldia Town, Karachi —
-      a calm room for considered hair, makeup, and personal care.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="/booking">Book an Appointment</a>
-      <a class="btn btn-ghost" href="/services">Explore Services</a>
-      <div class="hero-phone">
-        <span>Call the salon</span>
-        <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a>
-      </div>
-    </div>
+  <div class="hero-media">
+    <img
+      src="/images/hero-salon.jpg"
+      alt="Ivory salon interior with gold mirrors, champagne chairs, and burgundy drapes"
+      width="1376"
+      height="768"
+    >
+    <div class="hero-shade" aria-hidden="true"></div>
   </div>
 
-  <div class="hero-visual">
-    <div class="hero-photo">
-      <img
-        src="/images/hero-salon.jpg"
-        alt="Ivory salon interior with gold mirrors, champagne chairs, and burgundy drapes"
-        width="1376"
-        height="768"
-      >
+  <div class="hero-stage">
+    <div class="hero-card">
+      <p class="hero-kicker">Baldia Town · Karachi</p>
+      <h1>Where Beauty <em>Meets Confidence</em></h1>
+      <p class="hero-lead">
+        A welcoming beauty salon in New Saeedabad — calm hair, makeup, and
+        personal care, by appointment.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/booking">Book an Appointment</a>
+        <a class="btn btn-ghost" href="/services">Explore Services</a>
+      </div>
+      <a class="hero-phone" href="<%= site.telHref %>">
+        <span>Call the salon</span>
+        <strong><%= site.phoneDisplay %></strong>
+      </a>
     </div>
-    <div class="hero-frame">
-      <img
-        src="/images/hero-portrait.jpg"
-        alt="Editorial beauty portrait with soft glam makeup and polished waves"
-        width="720"
-        height="900"
-      >
+
+    <div class="hero-side">
+      <figure class="hero-portrait">
+        <img
+          src="/images/hero-portrait.jpg"
+          alt="Editorial beauty portrait with soft glam makeup and polished waves"
+          width="720"
+          height="900"
+        >
+      </figure>
+      <div class="hero-badge">
+        <strong><%= site.rating %></strong>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <span>Based on <%= site.reviewCount %> reviews</span>
+      </div>
     </div>
-    <div class="hero-badge">
-      <strong><%= site.rating %></strong>
-      <div class="stars" aria-hidden="true">★★★★★</div>
-      <span>Based on <%= site.reviewCount %> reviews</span>
-    </div>
-    <p class="hero-vert">Karachi · Baldia Town</p>
   </div>
 </section>
 
 <section class="trust" aria-label="Salon at a glance">
-  <div class="container-wide">
-    <div class="trust-row">
-      <div class="trust-item">
-        <b><%= site.rating %> / 5</b>
-        <span>Guest rating</span>
-      </div>
-      <div class="trust-item">
-        <b><%= site.reviewCount %> reviews</b>
-        <span>Customer feedback</span>
-      </div>
-      <div class="trust-item">
-        <b>Karachi</b>
-        <span>Baldia Town</span>
-      </div>
-      <div class="trust-item">
-        <b>By appointment</b>
-        <span>Booking available</span>
-      </div>
+  <div class="trust-row">
+    <div class="trust-item">
+      <b><%= site.rating %> / 5</b>
+      <span>Guest rating</span>
+    </div>
+    <div class="trust-item">
+      <b><%= site.reviewCount %> reviews</b>
+      <span>Customer feedback</span>
+    </div>
+    <div class="trust-item">
+      <b>Karachi</b>
+      <span>Baldia Town</span>
+    </div>
+    <div class="trust-item">
+      <b>By appointment</b>
+      <span>Booking available</span>
     </div>
   </div>
 </section>
@@ -81,7 +79,7 @@
   </div>
 </div>
 
-<section class="section section-ivory" id="story">
+<section class="section section-ivory story-section" id="story">
   <div class="container split">
     <div class="image-stack reveal reveal-image">
       <span class="gold-box" aria-hidden="true"></span>
@@ -91,7 +89,7 @@
     <div class="split-copy">
       <p class="section-kicker reveal">01 · The salon</p>
       <h2 class="section-title reveal">A quieter kind of <em>beauty visit</em></h2>
-      <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div class="gold-rule left reveal" aria-hidden="true"><span></span><i></i><span></span></div>
       <p class="section-lead reveal">
         Haya Beauty Salon sits in New Saeedabad, Baldia Town — a local salon built around
         ease, care, and the simple pleasure of being looked after.
@@ -100,7 +98,7 @@
         Come for a finished look, stay for the pace. We keep the experience personal,
         the room elegant, and the conversation honest.
       </p>
-      <p style="margin-top:28px" class="reveal">
+      <p class="reveal story-cta">
         <a class="btn btn-line" href="/about">Discover Our Story</a>
       </p>
     </div>
@@ -114,11 +112,11 @@
       <h2 class="section-title reveal">Services, shaped <em>around you</em></h2>
       <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
       <p class="section-lead reveal">
-        These categories are a starting point the salon can tailor. Ask what’s available
-        for your visit — names and details are easy to update.
+        A starting menu the salon can tailor. Ask what’s available for your visit —
+        names and details are easy to update.
       </p>
     </div>
-    <div class="card-grid" style="margin-top:48px">
+    <div class="card-grid">
       <% site.services.slice(0, 6).forEach((svc, i) => { %>
         <article class="service-card reveal" style="--d: <%= i * 70 %>ms">
           <div class="service-media">
@@ -137,20 +135,20 @@
         </article>
       <% }) %>
     </div>
-    <p style="text-align:center;margin-top:36px" class="reveal">
-      <a class="btn btn-burgundy btn" href="/services" style="background:var(--burgundy);color:var(--ivory)">View all services</a>
+    <p class="section-more reveal">
+      <a class="btn btn-burgundy" href="/services">View all services</a>
     </p>
   </div>
 </section>
 
-<section class="section section-ivory">
+<section class="section section-ivory why-section">
   <div class="container">
     <div class="section-head center">
       <p class="section-kicker reveal">03 · Why Haya</p>
       <h2 class="section-title reveal">What a visit <em>feels like</em></h2>
       <div class="gold-rule reveal" aria-hidden="true"><span></span><i></i><span></span></div>
     </div>
-    <div class="benefit-grid" style="margin-top:48px">
+    <div class="benefit-grid">
       <% site.benefits.forEach((b, i) => { %>
         <article class="benefit reveal" style="--d: <%= i * 80 %>ms">
           <div class="benefit-num">0<%= i + 1 %></div>
@@ -162,17 +160,17 @@
   </div>
 </section>
 
-<section class="section section-cream">
+<section class="section section-cream gallery-preview">
   <div class="container">
-    <div class="section-head" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;max-width:none">
+    <div class="section-head split-head">
       <div>
         <p class="section-kicker reveal">04 · Atmosphere</p>
         <h2 class="section-title reveal">Gallery</h2>
       </div>
       <a class="btn btn-line reveal" href="/gallery">Open the gallery</a>
     </div>
-    <div class="masonry" style="margin-top:36px" data-gallery="preview">
-      <% site.gallery.slice(0, 8).forEach((img, i) => { %>
+    <div class="masonry" data-gallery="preview">
+      <% site.gallery.slice(0, 6).forEach((img, i) => { %>
         <figure class="masonry-item reveal" data-index="<%= i %>" tabindex="0" role="button" aria-label="Open image: <%= img.alt %>">
           <img src="<%= img.src %>" alt="<%= img.alt %>" loading="lazy" width="800" height="1000">
           <figcaption><%= img.category %></figcaption>
@@ -182,47 +180,44 @@
   </div>
 </section>
 
-<section class="section section-ivory">
-  <div class="container" style="text-align:center">
-    <p class="section-kicker reveal">05 · Guests</p>
-    <div class="rating-hero reveal">
+<section class="rating-band" aria-label="Guest rating">
+  <div class="container rating-band-inner">
+    <div class="rating-band-score">
       <p class="rating-number"><%= site.rating %></p>
-      <div class="stars" aria-label="<%= site.rating %> out of 5 stars">★★★★★</div>
-      <p>Based on <%= site.reviewCount %> reviews</p>
+      <div>
+        <div class="stars" aria-label="<%= site.rating %> out of 5 stars">★★★★★</div>
+        <p>Based on <%= site.reviewCount %> reviews</p>
+      </div>
     </div>
-    <p class="section-lead reveal" style="margin-inline:auto">
+    <p>
       A genuine <%= site.rating %> rating from <%= site.reviewCount %> guests.
-      Individual written stories can be added here when the salon shares them.
+      Written stories can be added when the salon shares them.
     </p>
-    <p style="margin-top:24px" class="reveal">
-      <a class="btn btn-line" href="/reviews">Read the rating</a>
-    </p>
+    <a class="btn btn-ivory" href="/reviews">Read the rating</a>
   </div>
 </section>
 
-<section class="section" style="padding-top:0;padding-bottom:0">
-  <div class="container-wide">
-    <div class="yt-panel reveal">
-      <div class="yt-copy">
-        <p class="section-kicker" style="color:var(--gold-light)">On film</p>
-        <h2>Discover the salon on YouTube</h2>
-        <p>
-          Follow Haya Beauty Salon for beauty content from the team.
-          The channel is the salon’s official video home.
-        </p>
-        <a class="btn btn-gold" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer">
-          Visit Our YouTube Channel
-        </a>
-      </div>
-      <a class="yt-visual" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer" aria-label="Open Haya Beauty Salon on YouTube">
-        <img src="/images/youtube-cover.jpg" alt="Salon interior inviting viewers to the YouTube channel" loading="lazy" width="1200" height="800">
-        <div class="play-badge"><span aria-hidden="true">▶</span></div>
+<section class="yt-wrap">
+  <div class="yt-panel">
+    <div class="yt-copy">
+      <p class="section-kicker">On film</p>
+      <h2>Discover the salon on YouTube</h2>
+      <p>
+        Follow Haya Beauty Salon for beauty content from the team.
+        The channel is the salon’s official video home.
+      </p>
+      <a class="btn btn-gold" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer">
+        Visit Our YouTube Channel
       </a>
     </div>
+    <a class="yt-visual" href="<%= site.youtube %>" target="_blank" rel="noopener noreferrer" aria-label="Open Haya Beauty Salon on YouTube">
+      <img src="/images/youtube-cover.jpg" alt="Salon interior inviting viewers to the YouTube channel" loading="lazy" width="1200" height="800">
+      <div class="play-badge"><span aria-hidden="true">▶</span></div>
+    </a>
   </div>
 </section>
 
-<section class="section section-ivory">
+<section class="section section-ivory visit-section">
   <div class="container split">
     <div>
       <p class="section-kicker reveal">06 · Find us</p>
@@ -230,7 +225,7 @@
       <p class="section-lead reveal"><%= site.address.full %></p>
       <p class="section-lead reveal">Phone <a href="<%= site.telHref %>"><%= site.phoneDisplay %></a></p>
       <p class="note reveal"><%= site.hoursNote %></p>
-      <div class="hero-actions reveal" style="margin-top:28px">
+      <div class="hero-actions reveal visit-actions">
         <a class="btn btn-gold" href="/booking">Book Your Visit</a>
         <a class="btn btn-ghost" href="<%= site.mapDirections %>" target="_blank" rel="noopener noreferrer">Get Directions</a>
       </div>

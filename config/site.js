@@ -121,7 +121,7 @@ const site = {
       duration: "Duration on inquiry",
       price: "Price available on inquiry",
       image: "/images/services/facial.jpg",
-      alt: "Beauty still life with brushes and a blush rose on marble",
+      alt: "Facial treatment with warm cream linens and a blush rose",
     },
     {
       id: "bridal",
@@ -133,7 +133,7 @@ const site = {
       duration: "Duration on inquiry",
       price: "Price available on inquiry",
       image: "/images/services/bridal.jpg",
-      alt: "Portrait of a woman with polished bridal-ready makeup and soft waves",
+      alt: "Bride in ivory and gold with refined bridal makeup",
     },
     {
       id: "nails",
@@ -145,7 +145,7 @@ const site = {
       duration: "Duration on inquiry",
       price: "Price available on inquiry",
       image: "/images/services/nails.jpg",
-      alt: "Gold makeup brushes and a rose arranged on cream marble",
+      alt: "Champagne manicure being painted at a linen nail desk",
     },
     {
       id: "packages",
@@ -157,7 +157,7 @@ const site = {
       duration: "Duration on inquiry",
       price: "Price available on inquiry",
       image: "/images/services/packages.jpg",
-      alt: "Boutique salon reception with marble desk and blush roses",
+      alt: "Luxury salon amenities with cream towels, roses, and gold details",
     },
   ],
 
@@ -194,9 +194,9 @@ const site = {
     { src: "/images/gallery/salon-02.jpg", alt: "Gold-framed mirrors along the styling wall", category: "Salon" },
     { src: "/images/gallery/makeup-02.jpg", alt: "Makeup look in warm champagne light", category: "Makeup" },
     { src: "/images/gallery/interior-02.jpg", alt: "Boutique salon sitting corner", category: "Interior" },
-    { src: "/images/gallery/bridal-02.jpg", alt: "Soft-wave bridal-ready beauty portrait", category: "Bridal" },
+    { src: "/images/gallery/bridal-02.jpg", alt: "South Asian bride in ivory and gold with refined bridal makeup", category: "Bridal" },
     { src: "/images/gallery/hair-03.jpg", alt: "Polished dark waves", category: "Hair" },
-    { src: "/images/gallery/beauty-03.jpg", alt: "Beauty details on marble", category: "Beauty" },
+    { src: "/images/gallery/beauty-03.jpg", alt: "Champagne manicure being painted at a linen nail desk", category: "Beauty" },
     { src: "/images/gallery/interior-03.jpg", alt: "Burgundy drape with embroidered monogram", category: "Interior" },
   ],
 
