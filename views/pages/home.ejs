@@ -1,46 +1,32 @@
 <section class="hero" aria-label="Haya Beauty Salon">
-  <div class="hero-media">
+  <div class="hero-copy">
+    <p class="hero-kicker">Baldia Town · Karachi</p>
+    <h1>Where Beauty <em>Meets Confidence</em></h1>
+    <p class="hero-lead">
+      Haya Beauty Salon is a welcoming beauty salon in New Saeedabad, Baldia Town —
+      a calm place for hair, makeup, and personal care, by appointment.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="/booking">Book an Appointment</a>
+      <a class="btn btn-ghost" href="/services">Explore Services</a>
+    </div>
+    <a class="hero-phone" href="<%= site.telHref %>">
+      <span>Call the salon</span>
+      <strong><%= site.phoneDisplay %></strong>
+    </a>
+  </div>
+
+  <div class="hero-visual">
     <img
       src="/images/hero-salon.jpg"
       alt="Ivory salon interior with gold mirrors, champagne chairs, and burgundy drapes"
       width="1376"
       height="768"
     >
-    <div class="hero-shade" aria-hidden="true"></div>
-  </div>
-
-  <div class="hero-stage">
-    <div class="hero-card">
-      <p class="hero-kicker">Baldia Town · Karachi</p>
-      <h1>Where Beauty <em>Meets Confidence</em></h1>
-      <p class="hero-lead">
-        A welcoming beauty salon in New Saeedabad — calm hair, makeup, and
-        personal care, by appointment.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="/booking">Book an Appointment</a>
-        <a class="btn btn-ghost" href="/services">Explore Services</a>
-      </div>
-      <a class="hero-phone" href="<%= site.telHref %>">
-        <span>Call the salon</span>
-        <strong><%= site.phoneDisplay %></strong>
-      </a>
-    </div>
-
-    <div class="hero-side">
-      <figure class="hero-portrait">
-        <img
-          src="/images/hero-portrait.jpg"
-          alt="Editorial beauty portrait with soft glam makeup and polished waves"
-          width="720"
-          height="900"
-        >
-      </figure>
-      <div class="hero-badge">
-        <strong><%= site.rating %></strong>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <span>Based on <%= site.reviewCount %> reviews</span>
-      </div>
+    <div class="hero-badge">
+      <strong><%= site.rating %></strong>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <span>Based on <%= site.reviewCount %> reviews</span>
     </div>
   </div>
 </section>
