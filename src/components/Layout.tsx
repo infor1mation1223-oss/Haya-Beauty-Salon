@@ -30,11 +30,11 @@ export default function Layout() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled || !isHomePage
-            ? 'bg-[var(--color-background)]/95 backdrop-blur-md shadow-sm'
+            ? 'bg-white/95 backdrop-blur-lg shadow-sm border-b border-[var(--color-border)]/50'
             : 'bg-transparent'
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
@@ -51,31 +51,29 @@ export default function Layout() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-10">
               {siteConfig.navigation.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`relative text-sm font-medium transition-colors group ${
+                  className={`relative text-sm font-medium transition-colors ${
                     isScrolled || !isHomePage
                       ? 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]'
                       : 'text-white/90 hover:text-white'
                   } ${
-                    location.pathname === item.href ? 'text-[var(--color-accent)]' : ''
+                    location.pathname === item.href ? 'text-[var(--color-primary)]' : ''
                   }`}
                 >
                   {item.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--color-accent)] transition-all duration-300 ${
-                      location.pathname === item.href ? 'w-full' : 'group-hover:w-full'
-                    }`}
-                  />
+                  {location.pathname === item.href && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--color-accent)] rounded-full" />
+                  )}
                 </Link>
               ))}
             </div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-6">
               <a
                 href={`tel:${siteConfig.business.phone}`}
                 className={`flex items-center gap-2 text-sm transition-colors ${
@@ -89,7 +87,7 @@ export default function Layout() {
               </a>
               <Link
                 to="/booking"
-                className="px-6 py-2.5 bg-[var(--color-primary)] text-white rounded-full text-sm font-medium hover:bg-[var(--color-primary-dark)] transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="px-6 py-2.5 bg-[var(--color-primary)] text-white rounded-full text-sm font-medium hover:bg-[var(--color-primary-dark)] transition-all hover:shadow-lg"
               >
                 Book Now
               </Link>
@@ -118,19 +116,19 @@ export default function Layout() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:hidden bg-[var(--color-background)] border-t border-[var(--color-border)]"
+              className="lg:hidden bg-white border-t border-[var(--color-border)]"
             >
-              <div className="px-4 py-6 space-y-4">
+              <div className="px-6 py-6 space-y-1">
                 {siteConfig.navigation.map((item, index) => (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
                     <Link
                       to={item.href}
-                      className={`block py-3 text-lg font-medium transition-colors ${
+                      className={`block py-3 text-base font-medium transition-colors ${
                         location.pathname === item.href
                           ? 'text-[var(--color-primary)]'
                           : 'text-[var(--color-text-secondary)]'
@@ -141,7 +139,7 @@ export default function Layout() {
                   </motion.div>
                 ))}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                   className="pt-4 space-y-3"
@@ -176,11 +174,11 @@ export default function Layout() {
       <Footer />
 
       {/* Mobile Bottom CTA */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-[var(--color-background)] border-t border-[var(--color-border)] p-3 z-40">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[var(--color-border)] p-3 z-40 safe-area-inset-bottom">
         <div className="flex gap-3">
           <a
             href={`tel:${siteConfig.business.phone}`}
-            className="flex-1 flex items-center justify-center gap-2 py-3 border border-[var(--color-primary)] text-[var(--color-primary)] rounded-full font-medium"
+            className="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-full font-medium"
           >
             <Phone className="w-4 h-4" />
             Call

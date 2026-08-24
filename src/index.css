@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ========================================
-   HAYA BEAUTY SALON - DESIGN SYSTEM
+   HAYA BEAUTY SALON - PREMIUM DESIGN SYSTEM
    ======================================== */
 
 @theme {
@@ -12,10 +12,10 @@
   --color-primary-muted: #9C5A63;
 
   /* Secondary Colors - Soft Rose / Dusty Pink */
-  --color-secondary: #D4A5A5;
-  --color-secondary-light: #E8C4C4;
-  --color-secondary-dark: #B88A8A;
-  --color-secondary-muted: #F2DADA;
+  --color-secondary: #E8D5D5;
+  --color-secondary-light: #F5EBEB;
+  --color-secondary-dark: #D4A5A5;
+  --color-secondary-muted: #F8F0F0;
 
   /* Accent Colors - Champagne Gold / Warm Gold */
   --color-accent: #C9A961;
@@ -24,44 +24,30 @@
   --color-accent-muted: #E8D9B5;
 
   /* Background Colors - Warm Ivory / Cream */
-  --color-background: #FDF8F3;
-  --color-surface: #FAF3EC;
-  --color-surface-alt: #F5E6D3;
+  --color-background: #FFFBF7;
+  --color-surface: #FDF8F3;
+  --color-surface-alt: #F7F1E8;
   --color-card: #FFFFFF;
 
   /* Text Colors */
-  --color-text: #2D2926;
-  --color-text-secondary: #6B5E57;
-  --color-text-muted: #8B7B72;
-  --color-text-light: #A69790;
-  --color-text-inverse: #FDF8F3;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #7A7A7A;
+  --color-text-light: #9A9A9A;
+  --color-text-inverse: #FFFBF7;
 
   /* Border Colors */
-  --color-border: #E8DDD3;
-  --color-border-light: #F0E6DC;
-  --color-border-dark: #D4C4B5;
-
-  /* Shadow Colors */
-  --shadow-color: 20 10 10;
+  --color-border: #EAE3DA;
+  --color-border-light: #F2EDE7;
+  --color-border-dark: #D9CFC3;
 
   /* Fonts */
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Poppins', system-ui, sans-serif;
-
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
-  --spacing-4xl: 6rem;
+  --font-body: 'Inter', system-ui, sans-serif;
 
   /* Animation Timing */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 /* ========================================
@@ -84,8 +70,9 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-background);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -100,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
    ======================================== */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -108,12 +95,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-muted);
-  border-radius: 4px;
+  background: var(--color-border-dark);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: var(--color-primary-muted);
 }
 
 /* ========================================
@@ -122,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::selection {
   background-color: var(--color-primary);
-  color: var(--color-text-inverse);
+  color: white;
 }
 
 /* ========================================
@@ -131,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 
 :focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* ========================================
@@ -149,18 +136,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========================================
-   UTILITY CLASSES
-   ======================================== */
-
-.font-heading {
-  font-family: var(--font-heading);
-}
-
-.font-body {
-  font-family: var(--font-body);
-}
-
-/* ========================================
    ANIMATION KEYFRAMES
    ======================================== */
 
@@ -172,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -180,21 +155,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes fadeInDown {
+@keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
   to {
     opacity: 1;
@@ -202,56 +177,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
 /* ========================================
-   GLASS EFFECT
+   UTILITY CLASSES
    ======================================== */
 
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* ========================================
    DECORATIVE ELEMENTS
    ======================================== */
+
+.decorative-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+}
 
 .decorative-circle {
   position: absolute;
@@ -260,13 +211,24 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
-.decorative-line {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+.ornament {
+  position: relative;
 }
 
-.decorative-dots {
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-  background-size: 20px 20px;
+.ornament::before,
+.ornament::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  font-size: 8px;
+}
+
+.ornament::before {
+  left: -20px;
+}
+
+.ornament::after {
+  right: -20px;
 }
